@@ -1,0 +1,5 @@
+.chats_wrapper {
+    width:400px;
+    border-right: 2px solid rgb(145, 144, 144);
+    overflow: auto;
+}

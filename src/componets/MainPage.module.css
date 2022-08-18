@@ -1,0 +1,14 @@
+.main_page {
+    display:flex;
+    width:1200px;
+    margin: 0 auto;
+    height: 720px;
+    overflow: hidden;
+    border-bottom: 2px solid rgb(145, 144, 144);
+}
+img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  

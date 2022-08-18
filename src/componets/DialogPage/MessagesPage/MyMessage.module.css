@@ -1,0 +1,13 @@
+.my_message_wrapper {
+  border-radius: 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.my_message {
+  width: 500px;
+  color: rgb(52, 34, 34);
+  background: rgb(199, 195, 187);
+  border-radius: 30px;
+  padding: 12px 16px;
+}

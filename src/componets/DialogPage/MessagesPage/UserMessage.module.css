@@ -1,0 +1,17 @@
+.message_wrapper{
+display: flex;
+align-items: center;
+justify-content: start;}
+
+.user_message{
+    width: 500px;
+    color: rgb(251, 243, 243);
+    background: rgb(37, 36, 35);
+    border-radius: 30px;
+    text-align: start;
+    padding: 12px 16px;
+}
+
+.avatar_wrapper {
+    
+}
