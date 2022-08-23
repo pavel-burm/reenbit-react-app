@@ -1,13 +1,12 @@
-import React from 'react';
-import s from "./Preloader.module.css"
-
+import React from "react";
+import s from "./Preloader.module.scss";
 
 function Preloader(props) {
-    return ( 
+  return (
     <div>
-  <h1>LOADING...</h1>
+      <h1>LOADING...</h1>
     </div>
-    )
-  }
-  
-  export default Preloader;
+  );
+}
+
+export default Preloader;

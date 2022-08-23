@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./UserMessage.module.css";
+import s from "./UserMessage.module.scss";
 
 function UserMessage(props) {
   return (
@@ -7,7 +7,10 @@ function UserMessage(props) {
       <div className={s.avatar_wrapper}>
         <img src={props.avatar} alt="" />
       </div>
-     <p className={s.user_message}> {props.message}  </p>
+      <p className={s.user_message}>
+        {" "}
+        {props.message} {props.chuck}{" "}
+      </p>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CurrentDialog from "./DialogPage/CurrentDialog";
-import s from "./MainPage.module.css";
+import s from "./MainPage.module.scss";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Preloader from "./Preloader";
 import Sidebar from "./ChatsPage/Sidebar";
@@ -8,8 +8,7 @@ import Sidebar from "./ChatsPage/Sidebar";
 function MainPage(props) {
   const [value, setValue] = useState([]);
   const [users, setUsers] = useState([]);
-  const [chuck, setChuck] = useState("");
-  const [count, setCount] = useState('mojombo');
+  const [count, setCount] = useState("mojombo");
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
@@ -17,14 +16,11 @@ function MainPage(props) {
     fetch("https://api.github.com/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
-    fetch("https://api.chucknorris.io/jokes/random")
-      .then((response) => response.json())
-      .then((data) => setChuck(data));
   }, []);
-  const chuckMessage = chuck.value;
+ 
   const friends = users.map((item) => item);
   const body = value.map((item) => item.body);
-  const dialog = users.map((item) => ( 
+  const dialog = users.map((item) => (
     <Route
       path={`/dialog/${item.login}`}
       element={
@@ -33,10 +29,8 @@ function MainPage(props) {
           avatar={item.avatar_url}
           message={body}
           key={item.id}
-          chuck={chuckMessage}
           login={item.login}
-          render={props.render}
-          users={friends} 
+          users={friends}
         />
       }
     />
@@ -46,10 +40,10 @@ function MainPage(props) {
     <Preloader />
   ) : (
     <div className={s.main_page}>
-      <Sidebar message={body} users={friends}  value={setCount}/>
+      <Sidebar message={body} users={friends} value={setCount} />
       <Routes>
         {dialog}
-       <Route path="/" element={<Navigate to={`/dialog/${count}`}/>}/>
+        <Route path="/" element={<Navigate to={`/dialog/${count}`} />} />
       </Routes>
     </div>
   );

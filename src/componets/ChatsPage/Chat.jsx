@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Chat.module.css";
+import s from "./Chat.module.scss";
 import { NavLink } from "react-router-dom";
 
 function Chat(props) {
@@ -13,12 +13,11 @@ function Chat(props) {
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
   return (
-    
-      <button onClick={handleLocal} className={s.button}>
-        <NavLink
-      to={`/dialog/${props.login}`}
-      className={(Link) => (Link.isActive ? s.active : null)}
-    >
+    <button onClick={handleLocal} className={s.button}>
+      <NavLink
+        to={`/dialog/${props.login}`}
+        className={(Link) => (Link.isActive ? s.active : null)}
+      >
         <div className={`${s.chat_item} ${s.active}`}>
           <div className={s.avatar_wrapper}>
             <img src={props.avatar} alt="" />
@@ -39,9 +38,8 @@ function Chat(props) {
             </span>
           </div>
         </div>
-        </NavLink>
-      </button>
-  
+      </NavLink>
+    </button>
   );
 }
 

@@ -6,13 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const rendering= ()=> {
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App render={rendering}/>
+    <App />
     </BrowserRouter>
   </React.StrictMode>
 );
-}
-rendering()
+
+

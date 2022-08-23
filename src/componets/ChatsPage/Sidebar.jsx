@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Chats from "./Chats";
 import Search from "./Search";
-import s from "./Sidebar.module.css";
+import s from "./Sidebar.module.scss";
 
 function Sidebar(props) {
   const [elem, setElem] = useState("");
