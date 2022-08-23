@@ -1,33 +1,51 @@
 .chat_item {
   padding: 5px;
   color: rgb(126, 126, 126);
-  background: rgb(255, 255, 254);
+  background: white;
   border-bottom: 2px solid rgb(145, 144, 144);
   display: flex;
   align-items: center;
   height: 70px;
+  text-align: start;
+  width: 400px;
 }
-
+.active .chat_item {
+  background: rgb(127, 208, 255);
+}
 
 .username {
   font-size: 20px;
   color: rgb(14, 13, 13);
 }
 
-a{
+a {
   color: rgb(55, 52, 52);
   text-decoration: none;
   cursor: pointer;
 }
 
 .avatar_wrapper {
-
+  width: 36px;
+  height: 36px;
 }
-.user_wrapper{
-  padding-left: 20px;}
-  .message{
-    white-space: nowrap;
+.user_wrapper {
+  margin-left: 10px;
+  display: flex;
+}
+.message {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width:200px;
-  }
+  width: 200px;
+}
+
+.date {
+ width:100px;
+ margin-left: 30px;
+ text-align: end;
+ overflow: hidden;
+}
+.button {
+  border: none;
+  padding: 0;
+}

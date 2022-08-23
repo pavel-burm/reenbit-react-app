@@ -5,9 +5,10 @@
 }
 
 .my_message {
-  width: 500px;
+  width: 400px;
   color: rgb(52, 34, 34);
   background: rgb(199, 195, 187);
   border-radius: 30px;
   padding: 12px 16px;
+  overflow-wrap: break-word;
 }

@@ -1,14 +1,30 @@
 .main_page {
     display:flex;
-    width:1200px;
+    width:1100px;
     margin: 0 auto;
     height: 720px;
     overflow: hidden;
     border-bottom: 2px solid rgb(145, 144, 144);
 }
 img {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
   }
   
+  body{
+    overflow: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px; 
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(145, 144, 144);
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px #f3faf7;
+}

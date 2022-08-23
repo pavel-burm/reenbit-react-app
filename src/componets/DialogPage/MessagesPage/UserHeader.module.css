@@ -1,0 +1,19 @@
+.user_wrapper {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgb(145, 144, 144);
+  position: fixed;
+  width: 700px;
+  background: rgb(247, 244, 244);
+  padding-left: 10px;
+  overflow: hidden;
+}
+.username {
+  font-size: 20px;
+  margin-left: 10px;
+}
+.avatar_wrapper {
+  width: 36px;
+  height: 36px;
+}

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Chats from "./ChatsPage/Chats";
 import CurrentDialog from "./DialogPage/CurrentDialog";
 import s from "./MainPage.module.css";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Preloader from "./Preloader";
+import Sidebar from "./ChatsPage/Sidebar";
 
 function MainPage(props) {
   const [value, setValue] = useState([]);
   const [users, setUsers] = useState([]);
   const [chuck, setChuck] = useState("");
-  const [count, setCount] = useState("");
+  const [count, setCount] = useState('mojombo');
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
@@ -23,7 +23,7 @@ function MainPage(props) {
   }, []);
   const chuckMessage = chuck.value;
   const friends = users.map((item) => item);
-  const body = value.slice(0, 10).map((item) => item.body);
+  const body = value.map((item) => item.body);
   const dialog = users.map((item) => ( 
     <Route
       path={`/dialog/${item.login}`}
@@ -31,20 +31,25 @@ function MainPage(props) {
         <CurrentDialog
           id={item.id}
           avatar={item.avatar_url}
-          messages={body}
+          message={body}
           key={item.id}
           chuck={chuckMessage}
+          login={item.login}
+          render={props.render}
+          users={friends} 
         />
       }
     />
   ));
+
   return value.length === 0 && users.length === 0 ? (
     <Preloader />
   ) : (
     <div className={s.main_page}>
-      <Chats message={body} users={friends} />
+      <Sidebar message={body} users={friends}  value={setCount}/>
       <Routes>
         {dialog}
+       <Route path="/" element={<Navigate to={`/dialog/${count}`}/>}/>
       </Routes>
     </div>
   );

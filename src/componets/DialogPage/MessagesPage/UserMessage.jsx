@@ -7,7 +7,7 @@ function UserMessage(props) {
       <div className={s.avatar_wrapper}>
         <img src={props.avatar} alt="" />
       </div>
-     <p className={s.user_message}> {props.mess} </p>
+     <p className={s.user_message}> {props.message}  </p>
     </div>
   );
 }

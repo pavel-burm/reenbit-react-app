@@ -4,33 +4,31 @@ import MyMessage from "./MyMessage";
 import UserMessage from "./UserMessage";
 
 function CurrentUser(props) {
-  const messagesArray = props.mess.map((item) => (
+  const defaultArray = props.message.slice(98).map((item) => (
     <>
       <UserMessage
         id={props.id}
-        key={props.id}
+        key={props.key}
         avatar={props.avatar}
-       
         chuck={props.chuck}
-        mess={item} 
+        message={item}
       />
-      <MyMessage
-        id={props.id}
-        key={props.id}
-        avatar={props.avatar}
-        mess={item}
-      />
+      <MyMessage id={props.id} key={props.key} message={item} />
     </>
   ));
-
+  const myMessage = props.users
+    .slice(0,1)
+    .map((item) => (
+      <MyMessage
+        id={item.id}
+        key={item.key}
+        mymessage={props.value ? props.value : localStorage.getItem(`message${props.count}`) }
+      />
+    ));
   return (
-    <div>
-      {messagesArray}
-      {/* <UserMessage id={props.id} key={props.id} avatar={props.avatar} messages={props.messages[Math.floor(Math.random()*100)]}/>
-      <MyMessage  id={props.id} key={props.id} avatar={props.avatar} messages={props.messages[Math.floor(Math.random()*100)]}/>
-      <UserMessage  id={props.id} key={props.id} avatar={props.avatar} messages={props.messages[Math.floor(Math.random()*100)]}/>
-      <MyMessage  id={props.id} key={props.id} avatar={props.avatar} messages={props.messages[Math.floor(Math.random()*100)]}/>
-      <UserMessage  id={props.id} key={props.id} avatar={props.avatar} messages={props.messages[Math.floor(Math.random()*100)]}/> */}
+    <div className={s.messages_wrapper}>
+      {defaultArray}
+     {  myMessage }
     </div>
   );
 }

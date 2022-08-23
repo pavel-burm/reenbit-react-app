@@ -1,10 +1,10 @@
 import MainPage from "./componets/MainPage";
 
 
-function App() {
+function App(props) {
   return (
     <div className="App" style={{ overflow: "hidden" }}>
-      <MainPage />
+      <MainPage render={props.render}/>
     </div>
   );
 }

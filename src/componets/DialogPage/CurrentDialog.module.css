@@ -1,5 +1,5 @@
 textarea {
-  width: 500px;
+  width: 600px;
   height: 40px;
   resize: none;
   background: rgb(244, 244, 246);
@@ -10,15 +10,17 @@ textarea {
   padding-right: 30px;
 }
 .currentdialog_wrapper {
-  width: 800px;
+  width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-left: 2px solid rgb(145, 144, 144);
+ 
 }
 
 label {
   position: absolute;
-  right: 31%;
+  right: 7%;
   top: 37%;
   cursor: pointer;
   z-index: 1;
